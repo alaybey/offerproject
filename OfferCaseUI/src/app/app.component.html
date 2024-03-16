@@ -1,0 +1,32 @@
+<nz-table 
+[nzFrontPagination]="false" 
+[nzTotal]="pagination?.total" 
+[nzPageSize]="pagination?.size" 
+[nzPageIndex]="pagination?.current"
+(nzPageIndexChange)="onPageIndexChange($event)"
+ #basicTable [nzData]="offerList">
+  <thead>
+    <tr>
+      <th>MODE</th>
+      <th>MOVEMENT TYPE</th>
+      <th>INCOTERMS</th>
+      <th>COUNTRIES-CITIES</th>
+      <th>PACKAGE TYPE</th>
+      <th>UNIT-1</th>
+      <th>UNIT-2</th>
+      <th>CURRENCY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{data.id}}</td>
+      <td>{{data.movementType}}</td>
+      <td>{{data.incoterms}}</td>
+      <td>{{data.country}}</td>
+      <td>{{data.packageType}}</td>
+      <td>{{data.unit1}}</td>
+      <td>{{data.uni2}}</td>
+      <td>{{data.currency}}</td>
+    </tr>
+  </tbody>
+</nz-table>
